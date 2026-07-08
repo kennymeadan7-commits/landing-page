@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page d'accueil moderne et minimaliste : navigation fixe, section Hero, services et formulaire de contact.">
+    <title>MonSite — Design propre et minimaliste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Barre de navigation fixe -->
+    <header class="navbar">
+        <div class="container navbar__inner">
+            <a href="#accueil" class="navbar__logo">MonSite</a>
+
+            <button class="navbar__toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navbar__nav" id="navMenu">
+                <ul class="navbar__links">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section Hero -->
+        <section id="accueil" class="hero">
+            <div class="container hero__content">
+                <h1 class="hero__title">Créez quelque chose de remarquable</h1>
+                <p class="hero__subtitle">
+                    Une base propre et minimaliste pour lancer votre prochain projet web,
+                    pensée pour la simplicité et la performance.
+                </p>
+                <a href="#contact" class="btn btn--primary">Commencer maintenant</a>
+            </div>
+        </section>
+
+        <!-- Section Services -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section__title">Nos services</h2>
+                <p class="section__subtitle">Ce que nous pouvons faire pour vous.</p>
+
+                <div class="services__grid">
+                    <article class="card">
+                        <div class="card__icon" aria-hidden="true">✦</div>
+                        <h3 class="card__title">Design</h3>
+                        <p class="card__text">
+                            Des interfaces épurées et modernes qui mettent votre contenu en valeur.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="card__icon" aria-hidden="true">⚡</div>
+                        <h3 class="card__title">Développement</h3>
+                        <p class="card__text">
+                            Un code rapide, accessible et maintenable, bâti sur des standards solides.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="card__icon" aria-hidden="true">◎</div>
+                        <h3 class="card__title">Support</h3>
+                        <p class="card__text">
+                            Un accompagnement continu pour faire évoluer votre projet en toute sérénité.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section__title">Contact</h2>
+                <p class="section__subtitle">Une question&nbsp;? Écrivez-nous.</p>
+
+                <form class="contact__form" id="contactForm" novalidate>
+                    <div class="form__group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="vous@exemple.com" required>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary">Envoyer</button>
+                    <p class="form__feedback" id="formFeedback" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> MonSite. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
