@@ -255,6 +255,24 @@ body {
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
+.site-footer {
+  background: var(--color-text);
+  color: #e2e8f0;
+  padding: 24px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
 @media (max-width: 768px) {
   .section {
     padding: 72px 0;
@@ -273,6 +291,10 @@ body {
   }
 
   .about-grid {
+    flex-direction: column;
+  }
+
+  .footer-content {
     flex-direction: column;
   }
 }
