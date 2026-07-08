@@ -1,51 +1,89 @@
-const navLinks = document.querySelectorAll('.menu a[href^="#"]');
 const topbar = document.querySelector(".topbar");
-const observedSections = document.querySelectorAll("main section[id]");
+const menu = document.querySelector("#menu");
+const menuToggle = document.querySelector("#menu-toggle");
+const navLinks = document.querySelectorAll('.menu a[href^="#"]');
+const sections = document.querySelectorAll("main section[id]");
 
-function smoothScrollTo(event) {
-  const targetId = event.currentTarget.getAttribute("href");
-  if (!targetId || !targetId.startsWith("#")) return;
+function closeMenu() {
+  if (!menu || !menuToggle) return;
+  menu.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+}
 
-  const target = document.querySelector(targetId);
-  if (!target) return;
-
-  event.preventDefault();
-
-  const topbarOffset = topbar ? topbar.offsetHeight : 0;
-  const targetPosition = target.getBoundingClientRect().top + window.scrollY - topbarOffset - 8;
-
-  window.scrollTo({
-    top: targetPosition,
-    behavior: "smooth"
+if (menuToggle) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = menu.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
 }
 
 navLinks.forEach((link) => {
-  link.addEventListener("click", smoothScrollTo);
+  link.addEventListener("click", (event) => {
+    const targetId = link.getAttribute("href");
+    const target = document.querySelector(targetId);
+    if (!target) return;
+
+    event.preventDefault();
+    const offset = topbar ? topbar.offsetHeight : 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset - 6;
+    window.scrollTo({ top, behavior: "smooth" });
+    closeMenu();
+  });
 });
 
-function updateTopbarState() {
+function updateTopbar() {
   if (!topbar) return;
   topbar.classList.toggle("scrolled", window.scrollY > 8);
 }
+window.addEventListener("scroll", updateTopbar, { passive: true });
+updateTopbar();
 
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
-    const currentId = entry.target.id;
+    const id = entry.target.id;
     navLinks.forEach((link) => {
-      const isCurrent = link.getAttribute("href") === `#${currentId}`;
-      link.classList.toggle("active", isCurrent);
+      link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
     });
   });
-}, {
-  rootMargin: "-35% 0px -55% 0px",
-  threshold: 0.01
-});
+}, { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 });
 
-observedSections.forEach((section) => {
-  sectionObserver.observe(section);
-});
+sections.forEach((section) => sectionObserver.observe(section));
 
-window.addEventListener("scroll", updateTopbarState, { passive: true });
-updateTopbarState();
+const revealTargets = document.querySelectorAll(
+  ".feature-card, .news-card, .subject, .section-head, .contact-form, .contact-info"
+);
+revealTargets.forEach((el) => el.classList.add("reveal"));
+
+const revealObserver = new IntersectionObserver((entries, obs) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("visible");
+    obs.unobserve(entry.target);
+  });
+}, { threshold: 0.12 });
+
+revealTargets.forEach((el) => revealObserver.observe(el));
+
+const form = document.querySelector("#contact-form");
+const note = document.querySelector("#form-note");
+
+if (form) {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!name || !message || !emailOk) {
+      note.textContent = "Veuillez renseigner correctement tous les champs.";
+      note.className = "form-note err";
+      return;
+    }
+
+    note.textContent = "Merci ! Votre demande a bien été envoyée.";
+    note.className = "form-note ok";
+    form.reset();
+  });
+}
