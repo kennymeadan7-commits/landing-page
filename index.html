@@ -3,113 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CEG Les Palmiers - Bénin</title>
+  <title>Portail CEG - Résultats scolaires</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="navbar container" aria-label="Navigation principale">
-      <a class="logo" href="#hero">CEG Les Palmiers</a>
-      <ul class="nav-links">
-        <li><a href="#hero">Accueil</a></li>
-        <li><a href="#about">Collège</a></li>
-        <li><a href="#services">Formation</a></li>
-        <li><a href="#news">Actualités</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="topbar">
+    <div class="container topbar-content">
+      <a class="brand" href="#">
+        <span class="brand-badge" aria-hidden="true">CEG</span>
+        <span>Portail scolaire</span>
+      </a>
+      <nav aria-label="Navigation principale">
+        <ul class="menu">
+          <li><a href="#">Comment ça marche ?</a></li>
+          <li><a href="#">Examens</a></li>
+          <li><a href="#">Épreuves</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="hero" class="hero section container">
-      <span class="hero-tag">Collège d'Enseignement Général - République du Bénin</span>
-      <h1>Former, encadrer et accompagner chaque élève vers la réussite</h1>
-      <p>Le CEG Les Palmiers accueille les apprenants du 1er cycle dans un cadre scolaire rigoureux, inclusif et tourné vers l'excellence.</p>
-      <a class="btn" href="#contact">Préinscription</a>
+  <main class="container page">
+    <section class="page-heading">
+      <h1>Résultats du BEPC - Session normale 2026</h1>
     </section>
 
-    <section id="about" class="about section container">
-      <h2>Notre collège</h2>
-      <p class="section-intro">Un établissement public engagé pour une éducation de qualité, le civisme et l'épanouissement des élèves.</p>
-      <div class="about-grid">
-        <article class="info-card">
-          <h3>Mission</h3>
-          <p>Garantir un enseignement général solide et préparer les élèves aux examens nationaux dans les meilleures conditions.</p>
-        </article>
-        <article class="info-card">
-          <h3>Encadrement</h3>
-          <p>Une équipe pédagogique qualifiée assure le suivi académique, la discipline et l'orientation scolaire.</p>
-        </article>
-        <article class="info-card">
-          <h3>Valeurs</h3>
-          <p>Travail, respect, responsabilité et citoyenneté sont au coeur de la vie du collège.</p>
-        </article>
-      </div>
+    <section class="alert-box" role="status">
+      <strong>Important :</strong> veuillez respecter la confidentialité des informations des candidats.
     </section>
 
-    <section id="services" class="services section container">
-      <h2>Offre pédagogique</h2>
-      <p class="section-intro">Des disciplines fondamentales pour bâtir des bases solides et ouvrir les perspectives d'avenir.</p>
-      <div class="services-grid">
-        <article class="service-card">
-          <h3>Sciences et Mathématiques</h3>
-          <p>Mathématiques, SVT et Physique-Technologie pour développer logique, méthode et esprit critique.</p>
-        </article>
-        <article class="service-card">
-          <h3>Langues et Communication</h3>
-          <p>Français et Anglais pour renforcer l'expression écrite, l'oral et la communication au quotidien.</p>
-        </article>
-        <article class="service-card">
-          <h3>Vie scolaire</h3>
-          <p>Activités sportives, culturelles et éducatives pour un développement harmonieux des apprenants.</p>
-        </article>
-      </div>
-    </section>
+    <section class="cards-grid">
+      <article class="card">
+        <h2>Rechercher un résultat</h2>
+        <p class="hint">Entrez le numéro de table pour consulter le résultat.</p>
+        <form id="result-form" class="search-form">
+          <label for="numero">Numéro de table</label>
+          <input id="numero" name="numero" type="text" placeholder="Ex: 54-HA14-405" required>
+          <button class="btn btn-primary" type="submit">Chercher</button>
+          <button class="btn btn-secondary" type="reset">Réinitialiser</button>
+        </form>
+      </article>
 
-    <section id="news" class="news section container">
-      <h2>Actualités & annonces</h2>
-      <p class="section-intro">Retrouvez les informations importantes du collège: calendrier, réunions et activités scolaires.</p>
-      <div class="news-grid">
-        <article class="news-card">
-          <p class="news-date">15 septembre 2026</p>
-          <h3>Rentrée scolaire 2026-2027</h3>
-          <p>Accueil des élèves à partir de 7h30 avec la présentation des classes et des emplois du temps.</p>
-        </article>
-        <article class="news-card">
-          <p class="news-date">28 septembre 2026</p>
-          <h3>Réunion parents - administration</h3>
-          <p>Rencontre d'information sur le règlement intérieur, le suivi pédagogique et les activités de l'année.</p>
-        </article>
-        <article class="news-card">
-          <p class="news-date">10 octobre 2026</p>
-          <h3>Journée sportive inter-classes</h3>
-          <p>Compétitions amicales et sensibilisation à l'esprit d'équipe, ouvertes à tous les niveaux du collège.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="contact section container">
-      <h2>Contact & renseignements</h2>
-      <p class="section-intro">Pour les inscriptions, horaires, pièces à fournir ou toute demande d'information.</p>
-      <form class="contact-form" action="#" method="post">
-        <label for="name">Nom et prénom du parent/tuteur</label>
-        <input id="name" name="name" type="text" required>
-
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit" class="btn">Envoyer la demande</button>
-      </form>
+      <article class="card">
+        <h2>Résultat de la recherche</h2>
+        <div id="result-panel" class="result result-empty" aria-live="polite">
+          <p class="result-icon" aria-hidden="true">!</p>
+          <p class="result-title">Aucun résultat</p>
+          <p class="result-text">Saisissez un numéro de table puis lancez la recherche.</p>
+        </div>
+      </article>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <p>&copy; 2026 CEG Les Palmiers - Bénin. Tous droits réservés.</p>
-      <p>Contact: (+229) 01 00 00 00 00 | ceglespalmiers@example.com</p>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <section>
+        <h3>À propos</h3>
+        <p>Le portail CEG permet la consultation rapide des résultats scolaires et examens.</p>
+      </section>
+      <section>
+        <h3>Signaler un problème</h3>
+        <p>Contactez l'administration en cas d'erreur sur les informations affichées.</p>
+      </section>
+      <section>
+        <h3>En savoir plus</h3>
+        <p>Mentions légales, politique de confidentialité et conditions d'utilisation.</p>
+      </section>
     </div>
   </footer>
 
