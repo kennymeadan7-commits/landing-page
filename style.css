@@ -176,6 +176,11 @@ body {
   gap: 20px;
 }
 
+.news-grid {
+  display: flex;
+  gap: 20px;
+}
+
 .service-card {
   flex: 1;
   background: var(--color-surface);
@@ -191,6 +196,32 @@ body {
 }
 
 .service-card p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.news-card {
+  flex: 1;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: var(--shadow-soft);
+}
+
+.news-date {
+  margin: 0 0 8px;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.news-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.news-card p {
   margin: 0;
   color: var(--color-muted);
 }
@@ -234,6 +265,10 @@ body {
   }
 
   .services-grid {
+    flex-direction: column;
+  }
+
+  .news-grid {
     flex-direction: column;
   }
 
