@@ -213,8 +213,9 @@ a { color: inherit; }
 .hero-image-frame img {
   display: block;
   width: 100%;
-  height: 360px;
+  height: 440px;
   object-fit: cover;
+  object-position: center 22%;
 }
 .hero-visual:hover .hero-image-frame { transform: rotate(0deg); }
 .hero-card {
@@ -487,7 +488,7 @@ a { color: inherit; }
   .hero-inner { grid-template-columns: 1fr; padding: 56px 0 70px; }
   .hero-visual { margin-top: 30px; }
   .hero-image-frame { transform: none; }
-  .hero-image-frame img { height: 260px; }
+  .hero-image-frame img { height: 320px; }
   .contact-inner { grid-template-columns: 1fr; gap: 28px; }
   .grid-3 { grid-template-columns: 1fr 1fr; }
 
