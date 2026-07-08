@@ -3,55 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portail CEG - Résultats scolaires</title>
+  <title>CEG Les Palmiers - Accueil</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topbar">
     <div class="container topbar-content">
-      <a class="brand" href="#">
+      <a class="brand" href="#accueil">
         <span class="brand-badge" aria-hidden="true">CEG</span>
-        <span>Portail scolaire</span>
+        <span>CEG Les Palmiers</span>
       </a>
       <nav aria-label="Navigation principale">
         <ul class="menu">
-          <li><a href="#">Comment ça marche ?</a></li>
-          <li><a href="#">Examens</a></li>
-          <li><a href="#">Épreuves</a></li>
-          <li><a href="#">FAQ</a></li>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#college">Collège</a></li>
+          <li><a href="#formation">Formation</a></li>
+          <li><a href="#actualites">Actualités</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main class="container page">
-    <section class="page-heading">
-      <h1>Résultats du BEPC - Session normale 2026</h1>
+    <section id="accueil" class="page-heading">
+      <h1>Bienvenue au CEG Les Palmiers</h1>
+      <p class="subtitle">Un cadre de référence pour l'éducation générale au Bénin.</p>
     </section>
 
     <section class="alert-box" role="status">
-      <strong>Important :</strong> veuillez respecter la confidentialité des informations des candidats.
+      <strong>Annonce :</strong> les préinscriptions pour l'année 2026-2027 sont ouvertes du 15 août au 10 septembre.
     </section>
 
-    <section class="cards-grid">
-      <article class="card">
-        <h2>Rechercher un résultat</h2>
-        <p class="hint">Entrez le numéro de table pour consulter le résultat.</p>
-        <form id="result-form" class="search-form">
-          <label for="numero">Numéro de table</label>
-          <input id="numero" name="numero" type="text" placeholder="Ex: 54-HA14-405" required>
-          <button class="btn btn-primary" type="submit">Chercher</button>
-          <button class="btn btn-secondary" type="reset">Réinitialiser</button>
-        </form>
-      </article>
+    <section id="college" class="section-block">
+      <h2>Notre collège</h2>
+      <div class="cards-grid cards-three">
+        <article class="card">
+          <h3>Mission</h3>
+          <p>Assurer un enseignement général de qualité et préparer efficacement les élèves aux examens nationaux.</p>
+        </article>
+        <article class="card">
+          <h3>Encadrement</h3>
+          <p>Une équipe pédagogique engagée accompagne les apprenants dans leur progression académique et citoyenne.</p>
+        </article>
+        <article class="card">
+          <h3>Valeurs</h3>
+          <p>Discipline, respect, travail et responsabilité sont au coeur de la vie scolaire au sein de notre établissement.</p>
+        </article>
+      </div>
+    </section>
 
+    <section id="formation" class="section-block">
+      <h2>Offre pédagogique</h2>
       <article class="card">
-        <h2>Résultat de la recherche</h2>
-        <div id="result-panel" class="result result-empty" aria-live="polite">
-          <p class="result-icon" aria-hidden="true">!</p>
-          <p class="result-title">Aucun résultat</p>
-          <p class="result-text">Saisissez un numéro de table puis lancez la recherche.</p>
+        <p class="hint">Un parcours équilibré pour renforcer les bases et favoriser l'ouverture.</p>
+        <div class="chips">
+          <span class="chip">Mathématiques</span>
+          <span class="chip">Sciences</span>
+          <span class="chip">Français</span>
+          <span class="chip">Anglais</span>
+          <span class="chip">Histoire-Géographie</span>
+          <span class="chip">EPS</span>
         </div>
+      </article>
+    </section>
+
+    <section id="actualites" class="section-block">
+      <h2>Actualités & annonces</h2>
+      <div class="cards-grid">
+        <article class="card">
+          <p class="news-date">15 septembre 2026</p>
+          <h3>Rentrée scolaire 2026-2027</h3>
+          <p>Accueil des élèves à partir de 7h30 avec distribution des emplois du temps.</p>
+        </article>
+        <article class="card">
+          <p class="news-date">28 septembre 2026</p>
+          <h3>Réunion parents - administration</h3>
+          <p>Présentation du règlement intérieur et du dispositif de suivi pédagogique.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section-block">
+      <h2>Contact</h2>
+      <article class="card">
+        <form class="search-form">
+          <label for="name">Nom et prénom</label>
+          <input id="name" type="text" required>
+          <label for="email">Email</label>
+          <input id="email" type="email" required>
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" required></textarea>
+          <button class="btn btn-primary" type="submit">Envoyer la demande</button>
+        </form>
       </article>
     </section>
   </main>

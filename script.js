@@ -1,50 +1,24 @@
-const form = document.querySelector("#result-form");
-const panel = document.querySelector("#result-panel");
-const tableInput = document.querySelector("#numero");
+const navLinks = document.querySelectorAll('.menu a[href^="#"]');
 
-function showMissing() {
-  panel.className = "result result-empty";
-  panel.innerHTML = `
-    <p class="result-icon" aria-hidden="true">!</p>
-    <p class="result-title">Résultat non trouvé</p>
-    <p class="result-text">Vérifiez le numéro de table puis réessayez.</p>
-  `;
-}
+function smoothScrollTo(event) {
+  const targetId = event.currentTarget.getAttribute("href");
+  if (!targetId || !targetId.startsWith("#")) return;
 
-function showFound(tableNumber) {
-  panel.className = "result result-found";
-  panel.innerHTML = `
-    <p class="result-icon" aria-hidden="true">&#10003;</p>
-    <p class="result-title">Résultat disponible</p>
-    <p class="result-text">Numéro de table : <strong>${tableNumber}</strong></p>
-  `;
-}
+  const target = document.querySelector(targetId);
+  if (!target) return;
 
-form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const value = tableInput.value.trim();
 
-  if (!value) {
-    showMissing();
-    return;
-  }
+  const topbar = document.querySelector(".topbar");
+  const topbarOffset = topbar ? topbar.offsetHeight : 0;
+  const targetPosition = target.getBoundingClientRect().top + window.scrollY - topbarOffset - 8;
 
-  // Démonstration visuelle: tout numéro commençant par "54" est considéré trouvé.
-  if (value.startsWith("54")) {
-    showFound(value);
-    return;
-  }
+  window.scrollTo({
+    top: targetPosition,
+    behavior: "smooth"
+  });
+}
 
-  showMissing();
-});
-
-form.addEventListener("reset", () => {
-  window.setTimeout(() => {
-    panel.className = "result result-empty";
-    panel.innerHTML = `
-      <p class="result-icon" aria-hidden="true">!</p>
-      <p class="result-title">Aucun résultat</p>
-      <p class="result-text">Saisissez un numéro de table puis lancez la recherche.</p>
-    `;
-  }, 0);
+navLinks.forEach((link) => {
+  link.addEventListener("click", smoothScrollTo);
 });
