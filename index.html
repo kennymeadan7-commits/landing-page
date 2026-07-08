@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page Minimaliste</title>
+  <title>CEG Les Palmiers - Bénin</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <nav class="navbar container" aria-label="Navigation principale">
-      <a class="logo" href="#hero">MonSite</a>
+      <a class="logo" href="#hero">CEG Les Palmiers</a>
       <ul class="nav-links">
         <li><a href="#hero">Accueil</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#about">Collège</a></li>
+        <li><a href="#services">Formation</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -20,33 +21,55 @@
 
   <main>
     <section id="hero" class="hero section container">
-      <h1>Créez une présence web simple et efficace</h1>
-      <p>Une base propre, moderne et facile à personnaliser pour démarrer rapidement.</p>
-      <a class="btn" href="#contact">Commencer maintenant</a>
+      <span class="hero-tag">Collège d'Enseignement Général - République du Bénin</span>
+      <h1>Former, encadrer et accompagner chaque élève vers la réussite</h1>
+      <p>Le CEG Les Palmiers accueille les apprenants du 1er cycle dans un cadre scolaire rigoureux, inclusif et tourné vers l'excellence.</p>
+      <a class="btn" href="#contact">Préinscription</a>
+    </section>
+
+    <section id="about" class="about section container">
+      <h2>Notre collège</h2>
+      <p class="section-intro">Un établissement public engagé pour une éducation de qualité, le civisme et l'épanouissement des élèves.</p>
+      <div class="about-grid">
+        <article class="info-card">
+          <h3>Mission</h3>
+          <p>Garantir un enseignement général solide et préparer les élèves aux examens nationaux dans les meilleures conditions.</p>
+        </article>
+        <article class="info-card">
+          <h3>Encadrement</h3>
+          <p>Une équipe pédagogique qualifiée assure le suivi académique, la discipline et l'orientation scolaire.</p>
+        </article>
+        <article class="info-card">
+          <h3>Valeurs</h3>
+          <p>Travail, respect, responsabilité et citoyenneté sont au coeur de la vie du collège.</p>
+        </article>
+      </div>
     </section>
 
     <section id="services" class="services section container">
-      <h2>Services</h2>
+      <h2>Offre pédagogique</h2>
+      <p class="section-intro">Des disciplines fondamentales pour bâtir des bases solides et ouvrir les perspectives d'avenir.</p>
       <div class="services-grid">
         <article class="service-card">
-          <h3>Design Web</h3>
-          <p>Interfaces claires et élégantes qui mettent en valeur votre contenu.</p>
+          <h3>Sciences et Mathématiques</h3>
+          <p>Mathématiques, SVT et Physique-Technologie pour développer logique, méthode et esprit critique.</p>
         </article>
         <article class="service-card">
-          <h3>Développement</h3>
-          <p>Code moderne en HTML5, CSS3 et JavaScript pour des sites rapides.</p>
+          <h3>Langues et Communication</h3>
+          <p>Français et Anglais pour renforcer l'expression écrite, l'oral et la communication au quotidien.</p>
         </article>
         <article class="service-card">
-          <h3>Optimisation</h3>
-          <p>Structure performante, responsive et prête à évoluer selon vos besoins.</p>
+          <h3>Vie scolaire</h3>
+          <p>Activités sportives, culturelles et éducatives pour un développement harmonieux des apprenants.</p>
         </article>
       </div>
     </section>
 
     <section id="contact" class="contact section container">
-      <h2>Contact</h2>
+      <h2>Contact & renseignements</h2>
+      <p class="section-intro">Pour les inscriptions, horaires, pièces à fournir ou toute demande d'information.</p>
       <form class="contact-form" action="#" method="post">
-        <label for="name">Nom</label>
+        <label for="name">Nom et prénom du parent/tuteur</label>
         <input id="name" name="name" type="text" required>
 
         <label for="email">Email</label>
@@ -55,7 +78,7 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
 
-        <button type="submit" class="btn">Envoyer</button>
+        <button type="submit" class="btn">Envoyer la demande</button>
       </form>
     </section>
   </main>
